@@ -1,0 +1,4 @@
+#!/bin/sh
+export HADOOP_OPTS="-Ddocker.container.address=$(ifaddr eth0)"
+export YARN_OPTS="$HADOOP_OPTS"
+exec "$@"

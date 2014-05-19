@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "x$1" = "x" ]; then
+    echo "Usage: ${0##*/} <if>"
+    exit 1
+fi
+ip addr show "$1" | perl -nE '/inet ([^\/]+)/ && say $1'
