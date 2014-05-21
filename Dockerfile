@@ -6,10 +6,7 @@ WORKDIR /opt
 
 # Tools #################
 
-RUN \
-  apt-get update && \
-  apt-get dist-upgrade -y && \
-  apt-get install -y software-properties-common wget
+RUN apt-get install -y software-properties-common wget
 
 # JDK 7 #################
 
@@ -46,7 +43,7 @@ EXPOSE 8030 8032 8088 8042 19888
 RUN \
   apt-get install -y ssh && \
   mkdir -vp /var/run/sshd && \
-  echo 'root:pass' | chpasswd && \
+  echo 'root:pass' | chpasswd
 EXPOSE 22
 
 # Supervisor ############
